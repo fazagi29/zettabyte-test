@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>HTML Pricing</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-  
+    <div class="hero">
+      <h1>Simple Pricing!</h1>
+      <p>The most advanced customer Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestias ducimus minima quae quidem eos sapiente qui, quis enim obcaecati et repellat inventore aspernatur exercitationem. Aspernatur modi cumque odio eaque.</p>
+    </div>
+    <div class="content">
+      <div class="card-section">
+
+        <div class="card" id="card1">
+          <div class="card-header">BASIC</div>
+          <div class="card-price">
+            <div class="dollar">$</div>
+            <div class="number">4</div>
+            <div class="month">/month</div>
+          </div>
+          <div class="line"></div>
+          <div class="card-bottom">
+            <div class="plan">
+              <p>10 Projects</p>
+              <p>10 Pages</p>
+              <p>100 Mb Disk Space</p>
+            </div>
+            <button class="btn-buy" onclick="handleBuy(event)">BUY NOW</button>
+          </div>
+        </div>
+
+        <div class="card" id="card2">
+          <div class="card-header">
+            STANDARD
+            <span class="badge">Save 15%</span>
+          </div>
+          <div class="card-price">
+            <div class="dollar">$</div>
+            <div class="number">8</div>
+            <div class="month">/month</div>
+          </div>
+          <div class="line"></div>
+          <div class="card-bottom">
+            <div class="plan">
+              <p>20 Projects</p>
+              <p>20 Pages</p>
+              <p>200 Mb Disk Space</p>
+            </div>
+            <button class="btn-buy" onclick="handleBuy(event)">BUY NOW</button>
+          </div>
+        </div>
+
+        <div class="card" id="card3">
+          <div class="card-header">ADVANCE</div>
+          <div class="card-price">
+            <div class="dollar">$</div>
+            <div class="number">12</div>
+            <div class="month">/month</div>
+          </div>
+          <div class="line"></div>
+          <div class="card-bottom">
+            <div class="plan">
+              <p>40 Projects</p>
+              <p>40 Pages</p>
+              <p>500 Mb Disk Space</p>            
+            </div>
+            <button class="btn-buy" onclick="handleBuy(event)">BUY NOW</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-content">
+          <div class="question">
+            <h3>How does free trial work?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis architecto recusandae ducimus esse. Ut eos soluta culpa impedit deserunt maiores possimus harum quae quasi. Deleniti odit consectetur aspernatur. Velit, voluptate?</p>
+          </div>
+          <div class="question">
+            <h3>Can I cancel any time?</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error culpa modi, incidunt ipsam, voluptatem dignissimos voluptatibus minima iusto ut perferendis illo, vitae tempora sunt? Voluptates non totam saepe hic tenetur?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var allCards = document.querySelectorAll('.card');
+
+      for (var i = 0; i < allCards.length; i++) {
+        allCards[i].addEventListener('click', function(){
+          for(var j = 0; j < allCards.length; j++) {
+            allCards[j].classList.remove('active');
+          }
+          this.classList.add('active');
+        });
+      }
+
+      function handleBuy(event) {
+        event.stopPropagation();
+        alert('Success');
+      }
+    </script>
   </body>
 </html>
